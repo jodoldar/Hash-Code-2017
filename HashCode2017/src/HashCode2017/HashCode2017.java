@@ -81,15 +81,22 @@ public class HashCode2017 {
                         auxCac.ocupado+=auxVid.size;
                         auxVid.enCache = true;
                     }else{
-                        auxCacCon = auxEnd.nextMinCache(auxCacCon);
-                        if(auxCacCon==null){
-                            continue;
-                        }
-                        auxCac = auxCacCon.getCacheId();
-                        if(auxCac.tamMax-auxCac.ocupado>=auxVid.size){
-                            auxCac.videos.add(auxVid);
-                            auxCac.ocupado+=auxVid.size;
-                            auxVid.enCache = true;
+                        boolean aunrand = false;
+                        int a = 0;
+                        while(!aunrand && a<auxEnd.getAllConnections().length-1){
+                            auxCacCon = auxEnd.nextMinCache(auxCacCon);
+
+                            if(auxCacCon==null){
+                                continue;
+                            }
+                            auxCac = auxCacCon.getCacheId();
+                            if(auxCac.tamMax-auxCac.ocupado>=auxVid.size){
+                                aunrand = true;
+                                auxCac.videos.add(auxVid);
+                                auxCac.ocupado+=auxVid.size;
+                                auxVid.enCache = true;
+                            }
+                            a++;
                         }
                     }
                     //Falta un else    

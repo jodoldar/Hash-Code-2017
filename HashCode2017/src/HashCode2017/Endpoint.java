@@ -75,7 +75,7 @@ public class Endpoint {
         int aux = this.connectionsOrdenada.indexOf(c);
         aux++;
         if(aux>=connectionsOrdenada.size()-1){
-            return null;
+            return this.connectionsOrdenada.get(0);
         }else{
             return this.connectionsOrdenada.get(aux);}
     }
