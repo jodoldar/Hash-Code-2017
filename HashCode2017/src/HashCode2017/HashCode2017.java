@@ -62,7 +62,12 @@ public class HashCode2017 {
                 endpoints[loc].addRequest(requests[i]);
             }
             Arrays.sort(requests);
+            List<Request> newRequests = Lists.newArrayList(requests);
+            for(int i = 0; i < newRequests.){
+
+            }
             System.out.println("DFGHJKLKJHGFDSDFGHJK");
+            
         }
     }
 }
