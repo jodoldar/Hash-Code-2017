@@ -27,6 +27,6 @@ public class Request implements Comparable<Request>{
 
     @Override
     public int compareTo(Request r){
-        return this.numRequests - r.numRequests;
+        return r.numRequests -this.numRequests;
     }
 }
