@@ -4,7 +4,7 @@ package HashCode2017;
  *
  * @author Josep Dols
  */
-public class Request {
+public class Request implements Comparable<Request>{
     protected Video videoId;
     protected int endpoint;
     protected int numRequests;
@@ -23,5 +23,9 @@ public class Request {
     }
     public int getNumRequests(){
         return this.numRequests;
+    }
+
+    public int compareTo(Request r){
+        return this.numRequests - r.numRequests;
     }
 }
