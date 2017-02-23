@@ -2,8 +2,10 @@ package HashCode2017;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
-import java.util.Arryas;
 
 /**
  * Main class of the project
@@ -62,8 +64,8 @@ public class HashCode2017 {
                 endpoints[loc].addRequest(requests[i]);
             }
             Arrays.sort(requests);
-            List<Request> newRequests = Lists.newArrayList(requests);
-            for(int i = 0; i < newRequests.){
+            List<Request> newRequests = new ArrayList<Request>(Arrays.asList(requests));
+            for(int i = 0; i < newRequests.size();i++){
 
             }
             System.out.println("DFGHJKLKJHGFDSDFGHJK");
