@@ -20,4 +20,8 @@ public class Video {
     public int getSize(){
         return this.size;
     }
+
+    public boolean getEnCache(){
+        return this.enCache;
+    }
 }
