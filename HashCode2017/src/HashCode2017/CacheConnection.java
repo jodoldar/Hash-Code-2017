@@ -4,7 +4,7 @@ package HashCode2017;
  *
  * @author Josep Dols
  */
-public class CacheConnection {
+public class CacheConnection implements Comparable<CacheConnection> {
     protected int latency;
     protected Cache cacheId;
     protected Endpoint endpointId;
@@ -23,5 +23,9 @@ public class CacheConnection {
     }
     public Endpoint getEndpointId(){
         return this.endpointId;
+    }
+    @Override
+    public int compareTo(CacheConnection c){
+        return c.cacheId.ocupado - this.cacheId.ocupado;
     }
 }

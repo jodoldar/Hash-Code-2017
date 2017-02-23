@@ -1,6 +1,7 @@
 package HashCode2017;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  *
@@ -11,11 +12,14 @@ public class Endpoint {
     protected int latency;
     protected CacheConnection[] connections;
     protected ArrayList<Request> requests;
+    private ArrayList<CacheConnection> connectionsOrdenada;
     
     public Endpoint(int e, int l, int c){
         this.endpointId = e;
         this.latency = l;
         this.connections = new CacheConnection[c];
+        this.connectionsOrdenada = new ArrayList<CacheConnection>(Arrays.asList(this.connections));
+        Arrays.sort(this.connectionsOrdenada);
         this.requests = new ArrayList<Request>();
     }
     
@@ -59,5 +63,11 @@ public class Endpoint {
             }
         }
         return minCache;
+    }
+
+    public CacheConnection nextMinCache(CacheConnection c){
+        int aux = this.connectionsOrdenada.indexOf(c);
+        aux++;
+        return this.connectionsOrdenada.get(aux);
     }
 }
