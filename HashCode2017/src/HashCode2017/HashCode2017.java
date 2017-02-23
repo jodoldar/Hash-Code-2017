@@ -81,7 +81,7 @@ public class HashCode2017 {
                         auxCac.ocupado+=auxVid.size;
                         auxVid.enCache = true;
                     }else{
-                        CacheConnection auxCacCon = auxEnd.nextMinCache(auxCacCon);
+                        auxCacCon = auxEnd.nextMinCache(auxCacCon);
                         if(auxCacCon==null){
                             continue;
                         }
@@ -90,6 +90,7 @@ public class HashCode2017 {
                             auxCac.videos.add(auxVid);
                             auxCac.ocupado+=auxVid.size;
                             auxVid.enCache = true;
+                        }
                     }
                     //Falta un else    
                     

@@ -11,6 +11,7 @@ public class Endpoint {
     protected int endpointId;
     protected int latency;
     protected CacheConnection[] connections;
+    private CacheConnection[] connections2;
     protected ArrayList<Request> requests;
     private ArrayList<CacheConnection> connectionsOrdenada;
     
@@ -18,8 +19,10 @@ public class Endpoint {
         this.endpointId = e;
         this.latency = l;
         this.connections = new CacheConnection[c];
-        this.connectionsOrdenada = new ArrayList<CacheConnection>(Arrays.asList(this.connections));
-        Arrays.sort(this.connectionsOrdenada);
+        
+        
+        
+        
         this.requests = new ArrayList<Request>();
     }
     
@@ -66,8 +69,14 @@ public class Endpoint {
     }
 
     public CacheConnection nextMinCache(CacheConnection c){
+        this.connections2 = this.connections;
+        Arrays.sort(this.connections2);
+        this.connectionsOrdenada = new ArrayList<CacheConnection>(Arrays.asList(this.connections2));
         int aux = this.connectionsOrdenada.indexOf(c);
         aux++;
-        return this.connectionsOrdenada.get(aux);
+        if(aux>=connectionsOrdenada.size()-1){
+            return null;
+        }else{
+            return this.connectionsOrdenada.get(aux);}
     }
 }
