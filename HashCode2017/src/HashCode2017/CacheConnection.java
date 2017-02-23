@@ -7,9 +7,9 @@ package HashCode2017;
 public class CacheConnection {
     protected int latency;
     protected Cache cacheId;
-    protected int endpointId;
+    protected Endpoint endpointId;
     
-    public CacheConnection(int l, Cache c, int e){
+    public CacheConnection(int l, Cache c, Endpoint e){
         this.cacheId = c;
         this.endpointId = e;
         this.latency = l;
@@ -21,7 +21,7 @@ public class CacheConnection {
     public Cache getCacheId(){
         return this.cacheId;
     }
-    public int getEndpointId(){
+    public Endpoint getEndpointId(){
         return this.endpointId;
     }
 }
