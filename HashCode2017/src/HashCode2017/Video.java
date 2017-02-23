@@ -7,6 +7,7 @@ package HashCode2017;
 public class Video {
     protected int Id;
     protected int size;
+    protected boolean enCache;
     
     public Video(int ident,int tam){
         this.Id = ident;
