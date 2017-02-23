@@ -65,8 +65,24 @@ public class HashCode2017 {
             }
             Arrays.sort(requests);
             List<Request> newRequests = new ArrayList<Request>(Arrays.asList(requests));
-            for(int i = 0; i < newRequests.size();i++){
-
+            while(!newRequests.isEmpty()){
+                Request auxReq = newRequests.remove(0);
+                Video auxVid = auxReq.videoId;
+                if(!auxVid.getEnCache() && auxVid.size<X){
+                    Endpoint auxEnd = auxReq.getEndpoint();
+                    CacheConnection auxCacCon = auxEnd.minCache();
+                    if(auxCacCon==null){
+                        continue;
+                    }
+                    Cache auxCac = auxCacCon.getCacheId();
+                    if(auxCac.tamMax-auxCac.ocupado>=auxVid.size){
+                        auxCac.videos.add(auxVid);
+                        auxCac.ocupado+=auxVid.size;
+                        auxVid.enCache = true;
+                    }
+                    //Falta un else    
+                    
+                }
             }
             System.out.println("DFGHJKLKJHGFDSDFGHJK");
             

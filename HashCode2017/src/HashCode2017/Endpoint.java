@@ -50,9 +50,9 @@ public class Endpoint {
     }
 
     public CacheConnection minCache(){
-        int minLatency = 0;
+        int minLatency = Integer.MAX_VALUE;
         CacheConnection minCache = null;
-        for(int i =0;i<= connections.length;i++){
+        for(int i =0;i< connections.length;i++){
             if(minLatency > connections[i].getLatency()){
                 minLatency = connections[i].getLatency();
                 minCache = connections[i];

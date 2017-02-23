@@ -1,5 +1,7 @@
 package HashCode2017;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Josep Dols
@@ -8,11 +10,13 @@ public class Cache {
     protected int cacheId;
     protected int tamMax;
     protected int ocupado;
+    protected ArrayList<Video> videos;
     
     public Cache(int c, int t){
         this.cacheId = c;
         this.tamMax = t;
         this.ocupado = 0;
+        videos = new ArrayList<Video>();
     }
     
     public int getCacheId(){
