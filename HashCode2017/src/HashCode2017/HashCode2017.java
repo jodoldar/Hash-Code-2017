@@ -3,6 +3,7 @@ package HashCode2017;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
+import java.util.Arryas;
 
 /**
  * Main class of the project
@@ -60,7 +61,7 @@ public class HashCode2017 {
                 requests[i] = new Request(videos[in.nextInt()], endpoints[loc=in.nextInt()], in.nextInt());
                 endpoints[loc].addRequest(requests[i]);
             }
-            
+            Arrays.sort(requests);
             System.out.println("DFGHJKLKJHGFDSDFGHJK");
         }
     }
