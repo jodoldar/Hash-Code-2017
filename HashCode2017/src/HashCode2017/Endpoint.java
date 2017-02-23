@@ -38,4 +38,26 @@ public class Endpoint {
     public void addRequest(Request r){
         this.requests.add(r);
     }
+
+    public int minLatency(){
+        int minLatency = 0;
+        for(int i =0;i<= connections.length;i++){
+            if(minLatency > connections.getLatency()){
+                minLatency = connections.getLatency();
+            }
+        }
+        return minLatency;
+    }
+
+    public CacheConnection minCache(){
+        int minLatency = 0;
+        int minCache = null;
+        for(int i =0;i<= connections.length;i++){
+            if(minLatency > connections[i].getLatency()){
+                minLatency = connections[i].getLatency();
+                minCache = connections[i];
+            }
+        }
+        return minCache;
+    }
 }
