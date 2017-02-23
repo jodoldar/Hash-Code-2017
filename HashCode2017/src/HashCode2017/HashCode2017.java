@@ -9,10 +9,7 @@ import java.util.Scanner;
  * @author Josep Dols
  */
 public class HashCode2017 {
-    protected static Video[] videos;
-    protected static Endpoint[] endpoints;
-    protected static Cache[] caches;
-    protected static Request[] requests;
+
     
     public static void main(String[] args) throws FileNotFoundException{
         System.out.println("HashCode2017");
@@ -20,6 +17,10 @@ public class HashCode2017 {
             System.err.println("Numero de argumentos incorrecto");
             System.exit(1);
         }else{
+            Video[] videos;
+            Endpoint[] endpoints;
+            Cache[] caches;
+            Request[] requests;
             File f = new File(args[0]);
             Scanner in = new Scanner(f);
             int V,E,R,C,X;
@@ -28,6 +29,7 @@ public class HashCode2017 {
             R = in.nextInt();
             C = in.nextInt();
             X = in.nextInt();
+            in.nextLine();
             videos = new Video[V];
             endpoints = new Endpoint[E];
             requests = new Request[R];
@@ -58,6 +60,8 @@ public class HashCode2017 {
                 requests[i] = new Request(videos[in.nextInt()], endpoints[loc=in.nextInt()], in.nextInt());
                 endpoints[loc].addRequest(requests[i]);
             }
+            
+            System.out.println("DFGHJKLKJHGFDSDFGHJK");
         }
     }
 }
