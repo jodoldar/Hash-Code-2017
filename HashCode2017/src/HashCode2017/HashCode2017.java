@@ -2,6 +2,7 @@ package HashCode2017;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -85,7 +86,23 @@ public class HashCode2017 {
                 }
             }
             System.out.println("DFGHJKLKJHGFDSDFGHJK");
-            
+            int cacheOut=0;
+            String salida = "";
+            for(int i=0; i<caches.length; i++){
+                if (!caches[i].videos.isEmpty()){
+                    cacheOut++;
+                    salida+= "\n" + caches[i].cacheId;
+                    for(int j=0; j<caches[i].videos.size();j++){
+                        salida+= " " + caches[i].videos.get(j).Id;
+                    }
+                    
+                }
+            }
+            System.out.println(cacheOut + "\n" + salida);
+            PrintWriter out = new PrintWriter(new File(args[0]+".out"));
+            out.print(cacheOut);
+            out.print(salida);
+            out.close();
         }
     }
 }
