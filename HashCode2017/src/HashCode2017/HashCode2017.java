@@ -14,46 +14,7 @@ public class HashCode2017 {
     protected static Cache[] caches;
     protected static Request[] requests;
     
-    private void parser(File f) throws FileNotFoundException{
-        Scanner in = new Scanner(f);
-        int V,E,R,C,X;
-        V = in.nextInt();
-        E = in.nextInt();
-        R = in.nextInt();
-        C = in.nextInt();
-        X = in.nextInt();
-        videos = new Video[V];
-        endpoints = new Endpoint[E];
-        requests = new Request[R];
-        caches = new Cache[C];
-        
-        //Inicializacion de las caches
-        for(int i=0; i<C; i++){
-            caches[i] = new Cache(i,X);
-        }
-        
-        //Inicializacion de los videos
-        for(int i=0; i<V; i++){
-            videos[i] = new Video(i,in.nextInt());
-        }
-        
-        //Inicializacion de Endpoints y CacheConnections
-        for(int i=0; i<E; i++){
-            int numCaches;
-            endpoints[i] = new Endpoint(i, in.nextInt(), numCaches=in.nextInt());
-            for(int j=0; j<numCaches; j++){
-                endpoints[i].connections[j] = new CacheConnection(caches[in.nextInt()], in.nextInt(), endpoints[i]);
-            }
-        }
-        
-        //Inicializacion de Requests
-        for(int i=0; i<R; i++){
-            int loc;
-            requests[i] = new Request(videos[in.nextInt()], endpoints[loc=in.nextInt()], in.nextInt());
-            endpoints[loc].addRequest(requests[i]);
-        }
-    }
-    public static void main(String[] args){
+    public static void main(String[] args) throws FileNotFoundException{
         System.out.println("HashCode2017");
         if(args.length!=1){
             System.err.println("Numero de argumentos incorrecto");

@@ -9,7 +9,7 @@ public class CacheConnection {
     protected Cache cacheId;
     protected Endpoint endpointId;
     
-    public CacheConnection(int l, Cache c, Endpoint e){
+    public CacheConnection(Cache c,int l, Endpoint e){
         this.cacheId = c;
         this.endpointId = e;
         this.latency = l;
